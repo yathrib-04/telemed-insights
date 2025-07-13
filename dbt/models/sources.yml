@@ -1,0 +1,71 @@
+version: 2
+
+sources:
+  - name: raw
+    description: "Raw data from Telegram scraping"
+    tables:
+      - name: telegram_messages
+        description: "Raw telegram messages from Ethiopian medical channels"
+        columns:
+          - name: id
+            description: "Primary key"
+            tests:
+              - unique
+              - not_null
+          - name: message_id
+            description: "Telegram message ID"
+          - name: channel_username
+            description: "Channel username"
+          - name: channel_title
+            description: "Channel title"
+          - name: message_text
+            description: "Message text content"
+          - name: message_date
+            description: "Message timestamp"
+            tests:
+              - not_null
+          - name: has_media
+            description: "Whether message has media"
+          - name: media_type
+            description: "Type of media (photo, document, etc.)"
+          - name: media_url
+            description: "URL to media file"
+          - name: views
+            description: "Number of views"
+          - name: forwards
+            description: "Number of forwards"
+          - name: replies
+            description: "Number of replies"
+          - name: raw_data
+            description: "Complete raw message data as JSON"
+          - name: created_at
+            description: "Record creation timestamp"
+            tests:
+              - not_null
+      
+      - name: telegram_images
+        description: "Raw telegram images with object detection results"
+        columns:
+          - name: id
+            description: "Primary key"
+            tests:
+              - unique
+              - not_null
+          - name: message_id
+            description: "Associated telegram message ID"
+          - name: channel_username
+            description: "Channel username"
+          - name: image_url
+            description: "URL to the image"
+          - name: local_path
+            description: "Local file path"
+          - name: image_hash
+            description: "Hash of the image file"
+            tests:
+              - not_null
+          - name: object_detection_results
+            description: "YOLO object detection results as JSON"
+          - name: created_at
+            description: "Record creation timestamp"
+            tests:
+              - not_null 

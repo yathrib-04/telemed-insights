@@ -1,0 +1,36 @@
+# Core dependencies
+python-dotenv==1.0.0
+requests==2.31.0
+pandas==2.1.4
+numpy==1.24.3
+
+# Telegram API
+telethon==1.32.1
+python-telegram-bot==20.7
+
+# Database
+psycopg2-binary==2.9.9
+sqlalchemy==2.0.23
+
+# Data transformation
+dbt-core==1.7.3
+dbt-postgres==1.7.3
+
+# API framework
+fastapi==0.104.1
+uvicorn==0.24.0
+pydantic==2.5.0
+
+# Data orchestration
+dagster==1.5.12
+dagster-postgres==1.5.12
+
+# Object detection
+opencv-python==4.8.1.78
+ultralytics==8.0.196
+Pillow==10.1.0
+
+# Utilities
+python-multipart==0.0.6
+aiofiles==23.2.1
+loguru==0.7.2 
