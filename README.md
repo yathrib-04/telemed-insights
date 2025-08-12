@@ -55,44 +55,6 @@ The platform follows a layered data architecture:
 - **Logging**: Loguru
 - **Environment**: python-dotenv
 
-## 📁 Project Structure
-
-```
-ethiopian-medical-data-platform/
-├── api/                          # FastAPI application
-│   ├── __init__.py
-│   └── main.py                   # Main API endpoints
-├── dbt/                          # DBT project
-│   ├── models/
-│   │   ├── staging/              # Staging models
-│   │   │   ├── stg_telegram_messages.sql
-│   │   │   └── stg_telegram_images.sql
-│   │   └── marts/                # Mart models (star schema)
-│   │       ├── dim_channels.sql
-│   │       ├── dim_dates.sql
-│   │       └── fct_messages.sql
-│   ├── tests/                    # Custom data tests
-│   ├── dbt_project.yml           # DBT configuration
-│   ├── profiles.yml              # Database profiles
-│   └── sources.yml               # Source definitions
-├── scripts/                      # Utility scripts
-│   ├── __init__.py
-│   ├── init_database.py          # Database initialization
-│   └── telegram_scraper.py       # Telegram data extraction
-├── data/                         # Data lake (created at runtime)
-│   ├── raw/
-│   │   └── telegram_messages/
-│   └── processed/
-├── logs/                         # Application logs
-├── models/                       # YOLO models (created at runtime)
-├── .env.example                  # Environment variables template
-├── .gitignore                    # Git ignore rules
-├── docker-compose.yml            # Docker orchestration
-├── Dockerfile                    # Application container
-├── init.sql                      # Database initialization
-├── requirements.txt              # Python dependencies
-└── README.md                     # This file
-```
 
 ## 🚀 Quick Start
 
